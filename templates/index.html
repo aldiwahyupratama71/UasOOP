@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Daftar Resep Makanan{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Daftar Resep Makanan Terbaik</h2>
+    <p class="subtitle">Temukan resep makanan favorit Anda!</p>
+    
+    <!-- Form pencarian -->
+    <form action="/search" method="get" class="search-form">
+        <input type="text" name="q" placeholder="Cari resep makanan..." value="{{ query if query }}">
+        <button type="submit">🔍 Cari</button>
+    </form>
+    
+    <div class="recipe-grid">
+        {% for recipe in recipes %}
+        <div class="recipe-card">
+            <img src="{{ recipe.image }}" alt="{{ recipe.name }}">
+            <div class="recipe-content">
+                <h3>{{ recipe.name }}</h3>
+                <div class="recipe-meta">
+                    <span>⭐ {{ recipe.rating }}</span>
+                    <span>🍳 {{ recipe.cuisine }}</span>
+                </div>
+                <p class="recipe-time">⏱️ {{ recipe.prepTimeMinutes + recipe.cookTimeMinutes }} menit</p>
+                <p class="recipe-difficulty">🔥 {{ recipe.difficulty }}</p>
+                <a href="/detail/{{ recipe.id }}" class="btn">Lihat Resep</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

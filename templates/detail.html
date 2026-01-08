@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ recipe.name }} - Detail Resep{% endblock %}
+
+{% block content %}
+<div class="container">
+    <a href="/" class="back-btn">← Kembali ke Daftar</a>
+    
+    <div class="detail-container">
+        <div class="detail-header">
+            <img src="{{ recipe.image }}" alt="{{ recipe.name }}" class="detail-image">
+            <div class="detail-info">
+                <h2>{{ recipe.name }}</h2>
+                <div class="rating-section">
+                    <span class="rating">⭐ {{ recipe.rating }}</span>
+                    <span class="reviews">👤 {{ recipe.reviewCount }} reviews</span>
+                </div>
+                <div class="meta-info">
+                    <p>🍳 <strong>Cuisine:</strong> {{ recipe.cuisine }}</p>
+                    <p>⏱️ <strong>Prep Time:</strong> {{ recipe.prepTimeMinutes }} menit</p>
+                    <p>👨‍🍳 <strong>Cook Time:</strong> {{ recipe.cookTimeMinutes }} menit</p>
+                    <p>🍽️ <strong>Servings:</strong> {{ recipe.servings }} porsi</p>
+                    <p>🔥 <strong>Difficulty:</strong> {{ recipe.difficulty }}</p>
+                    <p>🔥 <strong>Calories:</strong> {{ recipe.caloriesPerServing }} kcal/porsi</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ingredients-section">
+            <h3>📝 Bahan-bahan</h3>
+            <ul class="ingredients-list">
+                {% for ingredient in recipe.ingredients %}
+                <li>{{ ingredient }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div class="instructions-section">
+            <h3>👨‍🍳 Cara Memasak</h3>
+            <ol class="instructions-list">
+                {% for instruction in recipe.instructions %}
+                <li>{{ instruction }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+        
+        <div class="tags-section">
+            <h3>🏷️ Tags</h3>
+            <div class="tags">
+                {% for tag in recipe.tags %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
