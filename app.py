@@ -6,7 +6,13 @@ app = Flask(__name__)
 # Base URL API
 API_BASE_URL = "https://dummyjson.com/recipes"
 
+# Route untuk welcome page (halaman pertama)
 @app.route('/')
+def welcome():
+    return render_template('welcome.html')
+
+# Route untuk home/beranda (daftar resep)
+@app.route('/home')
 def index():
     # Request data dari API
     response = requests.get(API_BASE_URL)

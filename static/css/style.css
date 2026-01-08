@@ -14,7 +14,7 @@ body {
 
 /* Navigation */
 nav {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     color: white;
     padding: 1.5rem 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -83,22 +83,22 @@ nav h1 {
 
 .search-form input:focus {
     outline: none;
-    border-color: #ff6b6b;
+    border-color: #2a5298;
 }
 
 .search-form button {
     padding: 1rem 2rem;
-    background: #ff6b6b;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     color: white;
     border: none;
     border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: transform 0.3s;
 }
 
 .search-form button:hover {
-    background: #ee5a6f;
+    transform: translateY(-2px);
 }
 
 /* Recipe Grid */
@@ -151,25 +151,25 @@ nav h1 {
 
 .btn {
     display: block;
-    background: #ff6b6b;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     color: white;
     text-align: center;
     padding: 0.8rem;
     text-decoration: none;
     border-radius: 8px;
     margin-top: 1rem;
-    transition: background 0.3s;
+    transition: transform 0.3s;
     font-weight: 500;
 }
 
 .btn:hover {
-    background: #ee5a6f;
+    transform: translateY(-2px);
 }
 
 /* Detail Page */
 .back-btn {
     display: inline-block;
-    color: #ff6b6b;
+    color: #2a5298;
     text-decoration: none;
     font-size: 1.1rem;
     margin-bottom: 2rem;
@@ -177,7 +177,7 @@ nav h1 {
 }
 
 .back-btn:hover {
-    color: #ee5a6f;
+    color: #1e3c72;
 }
 
 .detail-container {
@@ -236,7 +236,7 @@ nav h1 {
     font-size: 1.8rem;
     color: #2c3e50;
     margin-bottom: 1rem;
-    border-bottom: 3px solid #ff6b6b;
+    border-bottom: 3px solid #2a5298;
     padding-bottom: 0.5rem;
 }
 
@@ -249,7 +249,7 @@ nav h1 {
     padding: 0.8rem;
     margin: 0.5rem 0;
     background: #f8f9fa;
-    border-left: 4px solid #ff6b6b;
+    border-left: 4px solid #2a5298;
     border-radius: 4px;
 }
 
@@ -262,7 +262,7 @@ nav h1 {
     font-size: 1.8rem;
     color: #2c3e50;
     margin-bottom: 1rem;
-    border-bottom: 3px solid #ff6b6b;
+    border-bottom: 3px solid #2a5298;
     padding-bottom: 0.5rem;
 }
 
@@ -287,7 +287,7 @@ nav h1 {
     position: absolute;
     left: 1rem;
     top: 1rem;
-    background: #ff6b6b;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     color: white;
     width: 35px;
     height: 35px;
@@ -303,7 +303,7 @@ nav h1 {
     font-size: 1.8rem;
     color: #2c3e50;
     margin-bottom: 1rem;
-    border-bottom: 3px solid #ff6b6b;
+    border-bottom: 3px solid #2a5298;
     padding-bottom: 0.5rem;
 }
 
@@ -314,7 +314,7 @@ nav h1 {
 }
 
 .tag {
-    background: #ff6b6b;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -323,7 +323,7 @@ nav h1 {
 
 /* Footer */
 footer {
-    background: #2c3e50;
+    background: linear-gradient(135deg, #0f1419 0%, #1e3c72 100%);
     color: white;
     text-align: center;
     padding: 2rem;
@@ -332,6 +332,238 @@ footer {
 
 footer p {
     margin: 0.5rem 0;
+}
+
+/* ===== WELCOME PAGE STYLES ===== */
+
+.welcome-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f1419 0%, #1e3c72 50%, #2a5298 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.welcome-content {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    max-width: 1200px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.welcome-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.welcome-title {
+    font-size: 3rem;
+    color: #1e3c72;
+    margin-bottom: 1rem;
+    animation: fadeIn 1s ease-out;
+}
+
+.welcome-subtitle {
+    font-size: 1.3rem;
+    color: #7f8c8d;
+}
+
+/* Team Section */
+.team-section {
+    margin-bottom: 3rem;
+}
+
+.team-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #1e3c72;
+    margin-bottom: 1rem;
+}
+
+.team-info {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    border-radius: 12px;
+    color: white;
+}
+
+.team-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.class-info {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.member-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid transparent;
+}
+
+.member-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(30, 60, 114, 0.3);
+    border-color: #2a5298;
+}
+
+.member-avatar {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Member Photo */
+.member-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    border: 4px solid #2a5298;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: block;
+}
+
+.member-card:hover .member-photo {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(30, 60, 114, 0.3);
+    border-color: #1e3c72;
+}
+
+.member-card h4 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.nim {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.role {
+    color: #2a5298;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Project Info */
+.project-info {
+    margin-bottom: 3rem;
+}
+
+.project-info h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #1e3c72;
+    margin-bottom: 2rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-card {
+    background: linear-gradient(135deg, #0f1419 0%, #1e3c72 50%, #2a5298 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.info-card:hover {
+    transform: scale(1.05);
+}
+
+.info-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.info-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.info-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* University Info */
+.university-info {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.university-info h3 {
+    color: #1e3c72;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.university-info p {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+}
+
+/* Enter Button */
+.btn-enter {
+    display: block;
+    background: linear-gradient(135deg, #0f1419 0%, #1e3c72 50%, #2a5298 100%);
+    color: white;
+    text-align: center;
+    padding: 1.2rem 3rem;
+    text-decoration: none;
+    border-radius: 50px;
+    margin: 2rem auto 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    max-width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(15, 20, 25, 0.4);
+}
+
+.btn-enter:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(15, 20, 25, 0.6);
 }
 
 /* Responsive */
@@ -351,5 +583,21 @@ footer p {
     
     .recipe-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .welcome-title {
+        font-size: 2rem;
+    }
+    
+    .welcome-subtitle {
+        font-size: 1rem;
+    }
+    
+    .team-members {
+        grid-template-columns: 1fr;
+    }
+    
+    .welcome-content {
+        padding: 2rem 1rem;
     }
 }

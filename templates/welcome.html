@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Datang - Toko Resep Makanan Kami</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #2e01f7 100%);
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+
+        .welcome-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #030303 0%, #2b2ece 100%);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-section p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        .team-info-card {
+            background: linear-gradient(135deg, #030303 0%, #2b2ece 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .member-card {
+            background: linear-gradient(135deg, #030303 0%, #2b2ece 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            height: 100%;
+        }
+
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .member-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #667eea;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .member-card:hover .member-photo {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .member-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-nim {
+            color: #ffffff;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #030303 0%, #2b2ece 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .info-card:hover {
+            transform: scale(1.05);
+        }
+
+        .info-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .university-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .btn-enter {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-enter:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+            color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            .hero-section p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-card">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <h1><i class="bi bi-egg-fried"></i> Selamat Datang di Toko Resep Makanan Kami</h1>
+                <p>Temukan ribuan resep makanan lezat dari seluruh dunia</p>
+            </div>
+
+            <div class="p-5">
+                <!-- Team Info -->
+                <div class="team-info-card">
+                    <h3 class="mb-3"><i class="bi bi-people-fill"></i> Kelompok 3</h3>
+                    <p class="mb-0">Kelas: TI.24.C.8 | Mata Kuliah: Pemrograman Orientasi Objek</p>
+                </div>
+
+                <!-- Team Members -->
+                <h2 class="section-title">Anggota Kelompok</h2>
+                <div class="row g-4 mb-5">
+                    <!-- Member 1 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="member-card">
+                            <img src="{{ url_for('static', filename='images/rio.jpg') }}" alt="Nama Anggota 1" class="member-photo">
+                            <h4 class="member-name">Rio Akbar Pratamaputra</h4>
+                            <p class="member-nim">NIM: 312410393</p>
+                            <p class="member-role"><i class="bi bi-code-slash"></i> Backend Developer</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 2 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="member-card">
+                            <img src="{{ url_for('static', filename='images/aldi.jpeg') }}" alt="Nama Anggota 2" class="member-photo">
+                            <h4 class="member-name">Aldi Wahyu Pratama</h4>
+                            <p class="member-nim">NIM: 312410603</p>
+                            <p class="member-role"><i class="bi bi-palette"></i> Frontend Developer</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 3 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="member-card">
+                            <img src="{{ url_for('static', filename='images/bagus.jpg') }}" alt="Nama Anggota 3" class="member-photo">
+                            <h4 class="member-name">Bagus Ihsani M</h4>
+                            <p class="member-nim">NIM: 312410664</p>
+                            <p class="member-role"><i class="bi bi-pencil-square"></i> UI/UX Designer</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 4 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="member-card">
+                            <img src="{{ url_for('static', filename='images/akbar.png') }}" alt="Nama Anggota 4" class="member-photo">
+                            <h4 class="member-name">Muhammad Akbar</h4>
+                            <p class="member-nim">NIM: 312410053</p>
+                            <p class="member-role"><i class="bi bi-file-earmark-text"></i> Documentation & Testing</p>
+                        </div>
+                    </div>
+
+                 
+
+                <!-- Project Info -->
+                <h2 class="section-title">Tentang Projek</h2>
+                <div class="row g-4 mb-5">
+                    <div class="col-md-4">
+                        <div class="info-card">
+                            <div class="info-icon">🎯</div>
+                            <h3>Tujuan</h3>
+                            <p>Membuat aplikasi web Flask yang menampilkan resep makanan dari API publik</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="info-card">
+                            <div class="info-icon">🔧</div>
+                            <h3>Teknologi</h3>
+                            <p>Flask (Python), DummyJSON API, Bootstrap 5, HTML5, CSS3</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="info-card">
+                            <div class="info-icon">✨</div>
+                            <h3>Fitur</h3>
+                            <p>Daftar resep, detail resep, pencarian, dan filter kategori</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- University Info -->
+                <div class="university-card mb-4">
+                    <img src="{{ url_for('static', filename='images/upb.jpeg') }}" alt="Nama Anggota 4" class="member-photo">
+                    <h3><i class="bi bi-building"></i> Universitas Pelita Bangsa</h3>
+                    <p class="mb-0">Tahun Akademik 2025/2026</p>
+                </div>
+
+                <!-- Enter Button -->
+                <div class="text-center">
+                    <a href="/home" class="btn-enter">
+                        <i class="bi bi-arrow-right-circle"></i> Masuk ke Aplikasi
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
